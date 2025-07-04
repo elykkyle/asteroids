@@ -42,6 +42,6 @@ class Player(CircleShape):
 
     def shoot(self):
         print("shoot!")
-        shot = Shot(self.position.x, self.position.y, self.rotation)
+        shot = Shot(self.position.x, self.position.y)
+        shot.velocity = shot.velocity.rotate(self.rotation)
         shot.velocity *= PLAYER_SHOOT_SPEED
-        print(shot.velocity)
